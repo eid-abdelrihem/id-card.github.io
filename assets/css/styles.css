@@ -606,3 +606,6 @@ input[type=text]:focus, input[type=email]:focus, input[type=url]:focus, input[ty
   .page-wrap:last-child { break-after: avoid; page-break-after: avoid; }
   .ph-img { cursor: default; }
 }
+
+/* seal removed */
+.seal, .sheet[data-track] .seal { display: none !important; }
