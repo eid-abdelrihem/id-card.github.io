@@ -49,7 +49,7 @@
 
   /* ---------------- State ---------------- */
   var KEY = 'pm-idcard-v3';
-  var DEFAULTS = { name: '', email: '', mobile: '', track: '', job: '', cv: '', li: '', caps: false, tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · M.Sc. Research with Microsoft', photo: '', zoom: 1, px: 0.5, py: 0.3, per: 6 };
+  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · Research Collaboration with Microsoft', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
   var state = assign({}, DEFAULTS);
   var persist = true;
 
@@ -69,7 +69,7 @@
       }
     } catch (e) { /* storage unavailable */ }
     if (!TRACKS[state.track]) state.track = '';
-    if (state.tag) state.tag = state.tag.replace('Microsoft-Mentored Research', 'M.Sc. Research with Microsoft');
+    if (state.tag) state.tag = state.tag.replace('Microsoft-Mentored Research', 'Research Collaboration with Microsoft').replace('M.Sc. Research with Microsoft', 'Research Collaboration with Microsoft');
     if (!LAYOUTS[state.per]) state.per = DEFAULTS.per;
   }
   function save() {
