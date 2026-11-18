@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=6">
+<link rel="stylesheet" href="assets/css/styles.css?v=7">
 </head>
 <body>
 
@@ -84,6 +84,12 @@
           <button type="button" role="radio" class="case-opt" data-caps="1" aria-checked="false"><b>AA</b><small>ALL CAPS</small></button>
         </div>
       </div>
+
+      <label class="field">
+        <span class="lbl">Highlights strip <em>(bottom of the card · separate with ·)</em></span>
+        <input id="inTag" type="text" placeholder="e.g. M.Sc. AI &amp; Data Science · IEEE-Published · 1st Place ITC-Egypt 2026" maxlength="120">
+        <span class="note">Leave empty to show the original DIGILIANS strip.</span>
+      </label>
     </section>
 
     <section class="group">
@@ -226,7 +232,7 @@
 
                 <footer class="foot">
                   <i class="dash"></i>
-                  <span class="foot-t">DIGILIANS <b>·</b> <span class="ar">الرواد الرقميون</span></span>
+                  <span class="foot-t" id="fFoot">DIGILIANS <b>·</b> <span class="ar">الرواد الرقميون</span></span>
                   <i class="dash r"></i>
                 </footer>
               </article>
@@ -272,6 +278,6 @@
 </footer>
 
 <script src="assets/js/vendor/qrcode.min.js?v=1.4.4"></script>
-<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/app.js?v=8"></script>
 </body>
 </html>

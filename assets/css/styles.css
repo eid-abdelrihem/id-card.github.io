@@ -460,6 +460,13 @@ input[type=text]:focus, input[type=email]:focus, input[type=url]:focus, input[ty
 }
 .foot-t b { color: var(--gold); margin: 0 .5mm; }
 .foot-t .ar { font: 600 7pt 'Cairo', sans-serif; letter-spacing: 0; color: var(--gold); }
+.foot-t.tagline {
+  max-width: calc(100% - 26mm); overflow: hidden;
+  font: 600 6.4pt/1 'Montserrat', sans-serif; letter-spacing: .05em; color: #fff;
+}
+.foot-t.tagline b { margin: 0 1.6mm; }
+.foot.has-tag { gap: 2.5mm; }
+.foot.has-tag .dash { width: 8mm; }
 .dash { width: 16mm; height: .2mm; background: linear-gradient(90deg, transparent, rgba(250, 189, 15, .85)); }
 .dash.r { transform: scaleX(-1); }
 

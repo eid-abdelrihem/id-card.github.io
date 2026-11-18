@@ -48,8 +48,8 @@
   function icon(k) { return ICON_BODY[k] ? SVG_OPEN + ICON_BODY[k] + '</svg>' : ''; }
 
   /* ---------------- State ---------------- */
-  var KEY = 'pm-idcard-v2';
-  var DEFAULTS = { name: '', email: '', mobile: '', track: '', job: '', cv: '', li: '', caps: false, photo: '', zoom: 1, px: 0.5, py: 0.3, per: 6 };
+  var KEY = 'pm-idcard-v3';
+  var DEFAULTS = { name: '', email: '', mobile: '', track: '', job: '', cv: '', li: '', caps: false, tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · Microsoft-Mentored Research', photo: '', zoom: 1, px: 0.5, py: 0.3, per: 6 };
   var state = assign({}, DEFAULTS);
   var persist = true;
 
@@ -83,7 +83,7 @@
 
   /* ---------------- Elements ---------------- */
   var el = {};
-  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'inPhoto', 'inZoom', 'nameNote',
+  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'inPhoto', 'inZoom', 'nameNote',
    'trackPick', 'jobChips', 'drop', 'dropThumb', 'dropTitle', 'photoTools', 'dragTip', 'photoErr',
    'btnPhotoReset', 'btnPrint', 'btnReset', 'paperFit', 'pages', 'frontCard', 'backCard',
    'fName', 'fRole', 'fTrack', 'fTrackDd', 'fTrackIco', 'fEmail', 'fProgram', 'seal', 'fNet',
@@ -507,6 +507,7 @@
     fitLine(el.fTrackDd, 8, 5.2);
     fitLine(el.fEmail, 8, 5.2);
     fitLine(el.fMobile, 8, 5.2);
+    if (state.tag.trim()) fitLine(el.fFoot, 6.4, 4.2); else el.fFoot.style.fontSize = '';
   }
 
   /* ---------------- Render ---------------- */
@@ -523,6 +524,13 @@
     setText(el.fName, name, 'Your Full Name');
     setText(el.fRole, job, 'Job Profile');
     el.fRole.classList.toggle('caps', !!state.caps);
+    var tag = state.tag.trim();
+    if (!el.fFoot.getAttribute('data-orig')) el.fFoot.setAttribute('data-orig', el.fFoot.innerHTML);
+    el.fFoot.innerHTML = tag
+      ? tag.split(/\s*[·•|]\s*/).filter(Boolean).map(esc).join(' <b>·</b> ')
+      : el.fFoot.getAttribute('data-orig');
+    el.fFoot.classList.toggle('tagline', !!tag);
+    el.fFoot.parentNode.classList.toggle('has-tag', !!tag);
     Array.prototype.forEach.call(el.casePick.querySelectorAll('.case-opt'), function (b) {
       b.setAttribute('aria-checked', (b.getAttribute('data-caps') === '1') === !!state.caps ? 'true' : 'false');
     });
@@ -556,6 +564,7 @@
     el.inJob.value = state.job;
     el.inCv.value = state.cv;
     el.inLi.value = state.li;
+    el.inTag.value = state.tag;
     el.inZoom.value = state.zoom;
   }
 
@@ -568,6 +577,7 @@
   bindInput(el.inJob, 'job');
   bindInput(el.inCv, 'cv');
   bindInput(el.inLi, 'li');
+  bindInput(el.inTag, 'tag');
   el.casePick.addEventListener('click', function (e) {
     var b = e.target.closest('.case-opt'); if (!b) return;
     state.caps = b.getAttribute('data-caps') === '1';
