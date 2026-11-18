@@ -16,7 +16,7 @@
       label: 'Artificial Intelligence & Data Science',
       short: 'AI & DATA SCIENCE',
       blurb: 'Signature gold edition',
-      jobs: ['Machine Learning Engineer', 'Data Scientist', 'AI Engineer', 'Generative AI Engineer', 'NLP Engineer', 'Computer Vision Engineer', 'Data Analyst']
+      jobs: ['AI & Data Science Engineer', 'Machine Learning Engineer', 'Data Scientist', 'AI Engineer', 'Generative AI Engineer', 'NLP Engineer', 'Computer Vision Engineer', 'Data Analyst']
     },
     cyber: {
       label: 'Cyber Security',
