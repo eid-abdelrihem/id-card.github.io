@@ -674,3 +674,24 @@ body.basic .front .foot-t.tagline b { margin: 0 2mm; font-size: 1.15em; }
 body.basic .front .foot-t.tagline b { color: #C9A227; }
 body.basic .front .foot .dash { background: linear-gradient(90deg, transparent, rgba(201, 162, 39, .8)); }
 body.basic .front .foot .dash.r { background: linear-gradient(90deg, rgba(201, 162, 39, .8), transparent); }
+
+/* basic design: highlights as separate badges */
+body.basic .front .foot {
+  height: 13mm; background: transparent; border-top: 0; padding: 0 6mm 3mm; align-items: center;
+}
+body.basic .front .foot .dash { display: none; }
+body.basic .front .foot-t.tagline {
+  max-width: 100%; width: 100%; display: flex; justify-content: space-between; gap: 1.6mm;
+  letter-spacing: 0; color: #0A2350; font-weight: 700;
+}
+body.basic .front .foot-t.tagline b { display: none; }
+body.basic .front .foot-t.tagline .pill {
+  flex: 0 1 auto; white-space: nowrap; padding: 1.8mm 2.4mm; border-radius: 99mm;
+  background: #FFF8E6; border: .3mm solid rgba(201, 162, 39, .7);
+  box-shadow: 0 .4mm 1mm rgba(10, 35, 80, .06);
+}
+body.basic .front .foot-t.tagline .pill::before {
+  content: ''; display: inline-block; width: 1.3mm; height: 1.3mm; margin: 0 1.2mm .25mm 0;
+  border-radius: 50%; background: #C9A227; vertical-align: middle;
+}
+body.basic .front .bz { bottom: 13mm; }

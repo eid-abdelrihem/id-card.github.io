@@ -513,7 +513,7 @@
     fitLine(el.fEmail, 8, 5.2);
     fitLine(el.fMobile, 8, 5.2);
     if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 14);
-    if (state.tag.trim()) fitLine(el.fFoot, state.style !== 'classic' ? 8.6 : 6.4, 4.2); else el.fFoot.style.fontSize = '';
+    if (state.tag.trim()) fitLine(el.fFoot, state.style !== 'classic' ? 8.4 : 6.4, 4.2); else el.fFoot.style.fontSize = '';
   }
 
   /* ---------------- Render ---------------- */
@@ -550,7 +550,7 @@
     var tag = state.tag.trim();
     if (!el.fFoot.getAttribute('data-orig')) el.fFoot.setAttribute('data-orig', el.fFoot.innerHTML);
     el.fFoot.innerHTML = tag
-      ? tag.split(/\s*[·•|]\s*/).filter(Boolean).map(esc).join(' <b>·</b> ')
+      ? tag.split(/\s*[·•|]\s*/).filter(Boolean).map(function (x) { return '<span class="pill">' + esc(x) + '</span>'; }).join(' <b>·</b> ')
       : el.fFoot.getAttribute('data-orig');
     el.fFoot.classList.toggle('tagline', !!tag);
     el.fFoot.parentNode.classList.toggle('has-tag', !!tag);
