@@ -695,3 +695,20 @@ body.basic .front .foot-t.tagline .pill::before {
   border-radius: 50%; background: #C9A227; vertical-align: middle;
 }
 body.basic .front .bz { bottom: 13mm; }
+
+/* basic design: badges in a 2 × 2 grid with larger text */
+body.basic .front .foot { height: 20mm; padding: 0 7mm 3.2mm; }
+body.basic .front .foot-t.tagline {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 3mm;
+  font-size: 9.2pt; line-height: 1;
+}
+body.basic .front .foot-t.tagline .pill { text-align: center; padding: 1.8mm 3mm; overflow: hidden; text-overflow: ellipsis; }
+body.basic .front .foot-t.tagline .pill::before { width: 1.6mm; height: 1.6mm; margin: 0 1.6mm .3mm 0; }
+body.basic .front .bz { bottom: 20mm; padding-top: 8mm; padding-bottom: 5mm; }
+body.basic .bz-logos { height: 19mm; }
+body.basic .bz-logos .q { height: 17mm; }
+body.basic .bz-logos .d { height: 15mm; }
+body.basic .bz-tile { width: 21mm; height: 21mm; }
+body.basic .bz-line { margin: 3mm 0 2.8mm; }
+body.basic .bz-deg { margin-top: 2.4mm; }
+body.basic .bz-contact { gap: 2mm; }

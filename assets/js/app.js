@@ -513,7 +513,7 @@
     fitLine(el.fEmail, 8, 5.2);
     fitLine(el.fMobile, 8, 5.2);
     if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 14);
-    if (state.tag.trim()) fitLine(el.fFoot, state.style !== 'classic' ? 8.4 : 6.4, 4.2); else el.fFoot.style.fontSize = '';
+    if (state.tag.trim() && state.style === 'classic') fitLine(el.fFoot, 6.4, 4.2); else el.fFoot.style.fontSize = '';
   }
 
   /* ---------------- Render ---------------- */
