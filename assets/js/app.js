@@ -49,7 +49,7 @@
 
   /* ---------------- State ---------------- */
   var KEY = 'pm-idcard-v3';
-  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · Research Collaboration with Microsoft', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
+  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', tag: 'M.Sc. AI & Data Science · IEEE Published · 1st Place ITC-Egypt · Microsoft Collaboration', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
   var state = assign({}, DEFAULTS);
   var persist = true;
 
@@ -84,7 +84,7 @@
 
   /* ---------------- Elements ---------------- */
   var el = {};
-  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'stylePick', 'bzN1', 'bzN2', 'bzRole', 'bzDeg', 'bzEmail', 'bzPhone', 'bzqrLi', 'bzqrCv', 'inPhoto', 'inZoom', 'nameNote',
+  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'stylePick', 'bzN1', 'bzN2', 'bzRole', 'bzDeg', 'bzEmail', 'bzPhone', 'bzqrLi', 'bzqrCv', 'bzPhImg', 'inPhoto', 'inZoom', 'nameNote',
    'trackPick', 'jobChips', 'drop', 'dropThumb', 'dropTitle', 'photoTools', 'dragTip', 'photoErr',
    'btnPhotoReset', 'btnPrint', 'btnReset', 'paperFit', 'pages', 'frontCard', 'backCard',
    'fName', 'fRole', 'fTrack', 'fTrackDd', 'fTrackIco', 'fEmail', 'fProgram', 'seal', 'fNet',
@@ -512,7 +512,8 @@
     fitLine(el.fTrackDd, 8, 5.2);
     fitLine(el.fEmail, 8, 5.2);
     fitLine(el.fMobile, 8, 5.2);
-    if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 14);
+    if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 13);
+    if (el.bzEmail.offsetWidth) fitLine(el.bzEmail, state.style === 'photo' ? 11 : 12, 8);
     if (state.tag.trim()) fitLine(el.fFoot, state.style === 'classic' ? 6.4 : 10, 4.2); else el.fFoot.style.fontSize = '';
   }
 
@@ -532,8 +533,12 @@
     el.fRole.classList.toggle('caps', !!state.caps);
     var basic = state.style !== 'classic';
     document.body.classList.toggle('basic', basic);
+    document.body.classList.toggle('bzphoto', state.style === 'photo');
+    if (state.photo) { if (el.bzPhImg.getAttribute('src') !== state.photo) el.bzPhImg.src = state.photo; el.bzPhImg.style.display = ''; }
+    else { el.bzPhImg.removeAttribute('src'); el.bzPhImg.style.display = 'none'; }
+    el.bzPhImg.style.objectPosition = Math.round((state.px == null ? .5 : state.px) * 100) + '% ' + Math.round((state.py == null ? .3 : state.py) * 100) + '%';
     Array.prototype.forEach.call(el.stylePick.querySelectorAll('.case-opt'), function (b) {
-      b.setAttribute('aria-checked', (b.getAttribute('data-style') === 'basic') === basic ? 'true' : 'false');
+      b.setAttribute('aria-checked', b.getAttribute('data-style') === (state.style === 'photo' || state.style === 'classic' ? state.style : 'basic') ? 'true' : 'false');
     });
     var parts = name ? name.split(' ') : [];
     el.bzN1.textContent = parts.length > 1 ? parts[0] : (parts[0] || 'Your');

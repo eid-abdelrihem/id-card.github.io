@@ -706,3 +706,21 @@ body.basic .front .foot-t.tagline .pill { flex: none; padding: 2.1mm 1.9mm; }
 body.basic .front .foot-t.tagline .pill::before { display: none; }
 body.basic .front .bz { bottom: 14mm; padding-top: 9mm; padding-bottom: 4mm; }
 
+/* basic design with photo */
+.bz-ph { display: none; }
+body.bzphoto .front .bz-ph {
+  display: block; flex: none; align-self: center; width: 33mm; height: 41mm; margin-right: 1mm;
+  border-radius: 2mm; overflow: hidden; border: .5mm solid #C9A227; background: #EEF0F4;
+  box-shadow: 0 1.2mm 3mm rgba(10, 35, 80, .15);
+}
+.bz-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+body.bzphoto .front .bz { padding-left: 9mm; gap: 5mm; }
+body.bzphoto .bz-right { width: 50mm; }
+body.bzphoto .bz-logos { gap: 3.5mm; }
+body.bzphoto .bz-logos .q { height: 18mm; }
+body.bzphoto .bz-logos .d { height: 15.5mm; }
+body.bzphoto .bz-tile { width: 22mm; height: 22mm; }
+body.bzphoto .bz-qr { gap: 3mm; }
+body.bzphoto .bz-role { font-size: 12.5pt; }
+body.bzphoto .bz-deg b, body.bzphoto .bz-deg span { font-size: 10.5pt; }
+body.bzphoto .bz-contact li { font-size: 11pt; }

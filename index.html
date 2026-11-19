@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=17">
+<link rel="stylesheet" href="assets/css/styles.css?v=18">
 </head>
 <body>
 
@@ -81,7 +81,8 @@
         <span class="lbl">Card design</span>
         <div class="case-pick" id="stylePick" role="radiogroup" aria-label="Card design">
           <button type="button" role="radio" class="case-opt" data-style="basic" aria-checked="true"><b>▭</b><small>Basic · no photo</small></button>
-          <button type="button" role="radio" class="case-opt" data-style="classic" aria-checked="false"><b>▣</b><small>Classic · with photo</small></button>
+          <button type="button" role="radio" class="case-opt" data-style="photo" aria-checked="false"><b>◧</b><small>Basic · with photo</small></button>
+          <button type="button" role="radio" class="case-opt" data-style="classic" aria-checked="false"><b>▣</b><small>Classic</small></button>
         </div>
       </div>
 
@@ -250,6 +251,7 @@
                 </section>
 
                 <section class="bz" aria-hidden="false">
+                  <div class="bz-ph"><img id="bzPhImg" alt=""></div>
                   <div class="bz-left">
                     <h2 class="bz-name"><span class="l1" id="bzN1"></span><span class="l2" id="bzN2"></span></h2>
                     <i class="bz-line"></i>
@@ -320,6 +322,6 @@
 </footer>
 
 <script src="assets/js/vendor/qrcode.min.js?v=1.4.4"></script>
-<script src="assets/js/app.js?v=17"></script>
+<script src="assets/js/app.js?v=18"></script>
 </body>
 </html>
