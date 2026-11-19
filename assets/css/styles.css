@@ -702,8 +702,8 @@ body.basic .front .foot-t.tagline {
   display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 1mm;
   width: 100%; max-width: 100%; overflow: hidden; line-height: 1; letter-spacing: -.015em;
 }
-body.basic .front .foot-t.tagline .pill { flex: none; padding: 2.1mm 1.9mm; }
-body.basic .front .foot-t.tagline .pill::before { display: none; }
+body.basic .front .foot-t.tagline .pill { flex: none; padding: 1.9mm 2.6mm; }
+body.basic .front .foot-t.tagline .pill::before { display: inline-block; width: 1.3mm; height: 1.3mm; margin: 0 1.3mm .3mm 0; }
 body.basic .front .bz { bottom: 14mm; padding-top: 9mm; padding-bottom: 4mm; }
 
 /* basic design with photo */
@@ -724,3 +724,12 @@ body.bzphoto .bz-qr { gap: 3mm; }
 body.bzphoto .bz-role { font-size: 12.5pt; }
 body.bzphoto .bz-deg b, body.bzphoto .bz-deg span { font-size: 10.5pt; }
 body.bzphoto .bz-contact li { font-size: 11pt; }
+
+/* basic with photo: logos tucked into the top-right corner, away from the details */
+body.bzphoto .front .bz-right { position: static; justify-content: flex-end; }
+body.bzphoto .front .bz-logos {
+  position: absolute; top: 4.5mm; right: 6mm; height: auto; gap: 3mm;
+}
+body.bzphoto .front .bz-logos .q { height: 14mm; }
+body.bzphoto .front .bz-logos .d { height: 12mm; }
+body.bzphoto .front .bz-tile { width: 24mm; height: 24mm; }
