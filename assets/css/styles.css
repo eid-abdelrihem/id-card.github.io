@@ -733,3 +733,6 @@ body.bzphoto .front .bz-logos {
 body.bzphoto .front .bz-logos .q { height: 14mm; }
 body.bzphoto .front .bz-logos .d { height: 12mm; }
 body.bzphoto .front .bz-tile { width: 24mm; height: 24mm; }
+body.bzphoto .front .bz-logos .q { height: 18.5mm; }
+body.bzphoto .front .bz-logos { top: 3.5mm; right: 5.5mm; }
+body.bzphoto .front .bz-role { font-size: 14.5pt; overflow: hidden; }

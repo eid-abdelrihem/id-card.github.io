@@ -514,6 +514,7 @@
     fitLine(el.fMobile, 8, 5.2);
     if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 13);
     if (el.bzEmail.offsetWidth) fitLine(el.bzEmail, state.style === 'photo' ? 11 : 12, 8);
+    if (el.bzRole.offsetWidth) fitLine(el.bzRole, state.style === 'photo' ? 14.5 : 14, 10);
     if (state.tag.trim()) fitLine(el.fFoot, state.style === 'classic' ? 6.4 : 8.8, 4.2); else el.fFoot.style.fontSize = '';
   }
 
