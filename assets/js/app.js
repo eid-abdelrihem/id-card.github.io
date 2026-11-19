@@ -48,7 +48,7 @@
   function icon(k) { return ICON_BODY[k] ? SVG_OPEN + ICON_BODY[k] + '</svg>' : ''; }
 
   /* ---------------- State ---------------- */
-  var KEY = 'pm-idcard-v3';
+  var KEY = 'pm-idcard-v4';
   var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', tag: 'M.Sc. AI & Data Science · IEEE Published · 1st Place ITC-Egypt · Microsoft Collaboration', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
   var state = assign({}, DEFAULTS);
   var persist = true;
