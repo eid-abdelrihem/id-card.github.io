@@ -739,8 +739,3 @@ body.bzphoto .front .bz-role { font-size: 14.5pt; overflow: hidden; }
 /* photo design: name starts at the photo's left edge */
 body.bzphoto .front .bz-name { margin-left: -39mm; width: calc(100% + 39mm); }
 body.bzphoto .front .bz-ph { align-self: flex-start; margin-top: 15mm; }
-/* squeeze badge chrome so the text itself can grow */
-body.basic .front .foot { padding-left: 2mm; padding-right: 2mm; }
-body.basic .front .foot-t.tagline { gap: .8mm; letter-spacing: -.02em; }
-body.basic .front .foot-t.tagline .pill { padding: 1.9mm 1.6mm; }
-body.basic .front .foot-t.tagline .pill::before { width: 1.1mm; height: 1.1mm; margin: 0 .9mm .3mm 0; }
