@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=8">
+<link rel="stylesheet" href="assets/css/styles.css?v=9">
 </head>
 <body>
 
@@ -127,8 +127,15 @@
         <span class="note" id="liNote"></span>
         <a class="test-link" id="testLi" href="#" target="_blank" rel="noopener" hidden>Open LinkedIn link to test it ↗</a>
       </label>
+      <div class="field">
+        <span class="lbl">Print layout</span>
+        <div class="case-pick" id="sidePick" role="radiogroup" aria-label="Print layout">
+          <button type="button" role="radio" class="case-opt" data-side="front" aria-checked="true"><b>1</b><small>Front only · QR on front</small></button>
+          <button type="button" role="radio" class="case-opt" data-side="both" aria-checked="false"><b>2</b><small>Front + back</small></button>
+        </div>
+      </div>
       <div class="callout">
-        <p>The back of the card shows <b>two QR codes</b>: one opens your <b>CV</b>, one opens your <b>LinkedIn</b>.</p>
+        <p>The card shows <b>two QR codes</b>: one opens your <b>CV</b>, one opens your <b>LinkedIn</b>.</p>
         <p class="small">Set the CV sharing to <b>Anyone with the link → Viewer</b>, otherwise recruiters can't open it.</p>
       </div>
     </section>
@@ -226,6 +233,10 @@
                         <dt>Mobile</dt><dd id="fMobile"></dd>
                       </dl>
                       <div class="seal" id="seal"></div>
+                      <div class="fqr" id="fQr">
+                        <figure><figcaption>LinkedIn</figcaption><div class="fqr-tile" id="fqrLi"></div></figure>
+                        <figure><figcaption>CV</figcaption><div class="fqr-tile" id="fqrCv"></div></figure>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -278,6 +289,6 @@
 </footer>
 
 <script src="assets/js/vendor/qrcode.min.js?v=1.4.4"></script>
-<script src="assets/js/app.js?v=10"></script>
+<script src="assets/js/app.js?v=11"></script>
 </body>
 </html>
