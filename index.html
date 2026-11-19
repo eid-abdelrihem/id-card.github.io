@@ -9,8 +9,8 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=9">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=10">
 </head>
 <body>
 
@@ -76,6 +76,14 @@
         <input id="inJob" type="text" placeholder="e.g. Machine Learning Engineer" maxlength="48">
         <span class="chips" id="jobChips"></span>
       </label>
+
+      <div class="field">
+        <span class="lbl">Card design</span>
+        <div class="case-pick" id="stylePick" role="radiogroup" aria-label="Card design">
+          <button type="button" role="radio" class="case-opt" data-style="basic" aria-checked="true"><b>▭</b><small>Basic · no photo</small></button>
+          <button type="button" role="radio" class="case-opt" data-style="classic" aria-checked="false"><b>▣</b><small>Classic · with photo</small></button>
+        </div>
+      </div>
 
       <div class="field">
         <span class="lbl">Job title style</span>
@@ -241,6 +249,29 @@
                   </div>
                 </section>
 
+                <section class="bz" aria-hidden="false">
+                  <div class="bz-left">
+                    <h2 class="bz-name"><span class="l1" id="bzN1"></span><span class="l2" id="bzN2"></span></h2>
+                    <i class="bz-line"></i>
+                    <div class="bz-role" id="bzRole"></div>
+                    <div class="bz-deg"><b id="bzDeg"></b><span>Queen's University</span></div>
+                    <ul class="bz-contact">
+                      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="bzEmail"></span></li>
+                      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg><span id="bzPhone"></span></li>
+                    </ul>
+                  </div>
+                  <div class="bz-right">
+                    <div class="bz-logos">
+                      <img src="assets/img/logos/queens.png" alt="Queen's University" class="q">
+                      <img src="assets/img/logos/digilians.png" alt="Digilians" class="d">
+                    </div>
+                    <div class="bz-qr">
+                      <figure><figcaption>LinkedIn</figcaption><div class="bz-tile" id="bzqrLi"></div></figure>
+                      <figure><figcaption>CV</figcaption><div class="bz-tile" id="bzqrCv"></div></figure>
+                    </div>
+                  </div>
+                </section>
+
                 <footer class="foot">
                   <i class="dash"></i>
                   <span class="foot-t" id="fFoot">DIGILIANS <b>·</b> <span class="ar">الرواد الرقميون</span></span>
@@ -289,6 +320,6 @@
 </footer>
 
 <script src="assets/js/vendor/qrcode.min.js?v=1.4.4"></script>
-<script src="assets/js/app.js?v=11"></script>
+<script src="assets/js/app.js?v=12"></script>
 </body>
 </html>

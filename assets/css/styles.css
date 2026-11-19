@@ -622,3 +622,39 @@ body.front-only .pages .page-wrap:last-child { display: none !important; }
 @media print {
   body.front-only .page-wrap:first-child { break-after: avoid; page-break-after: avoid; }
 }
+
+/* =========================================================
+   BASIC DESIGN (no photo) — clean business-card look
+   ========================================================= */
+.bz { display: none; }
+body.basic .front { background: #FCFBF8 !important; }
+body.basic .front .f-tri, body.basic .front .f-lines, body.basic .front .f-net,
+body.basic .front .ds-frame, body.basic .front .logos, body.basic .front .rule, body.basic .front .f-body { display: none !important; }
+body.basic .front .bz {
+  display: flex; position: absolute; left: 0; right: 0; top: 0; bottom: 9.5mm;
+  padding: 9mm 10mm 7.5mm 13mm; gap: 6mm; font-family: 'Inter', 'Montserrat', sans-serif; color: #0B2A5B;
+}
+.bz-left { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.bz-name { margin: 0; font-weight: 400; line-height: 1.08; }
+.bz-name .l1 { display: block; font: 400 19pt/1.1 'Inter', 'Montserrat', sans-serif; color: #0B2A5B; white-space: nowrap; }
+.bz-name .l2 { display: block; font: 700 25pt/1.1 'Inter', 'Montserrat', sans-serif; color: #0B2A5B; white-space: nowrap; }
+.bz-line { display: block; position: relative; width: 22mm; height: .5mm; margin: 4.2mm 0 3.6mm; background: #F2B544; }
+.bz-line::after { content: ''; position: absolute; right: -1mm; top: 50%; width: 2.2mm; height: 2.2mm; margin-top: -1.1mm; border-radius: 50%; background: #F2B544; }
+.bz-role { font: 600 14pt/1.2 'Inter', 'Montserrat', sans-serif; color: #0B2A5B; white-space: nowrap; }
+.bz-deg { margin-top: 3.2mm; display: flex; flex-direction: column; gap: .8mm; }
+.bz-deg b { font: 700 11.5pt/1.2 'Inter', 'Montserrat', sans-serif; color: #0B2A5B; white-space: nowrap; }
+.bz-deg span { font: 400 11.5pt/1.2 'Inter', 'Montserrat', sans-serif; color: #0B2A5B; }
+.bz-contact { list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-direction: column; gap: 2.4mm; }
+.bz-contact li { display: flex; align-items: center; gap: 2.4mm; font: 400 12pt/1 'Inter', 'Montserrat', sans-serif; color: #1A2233; white-space: nowrap; }
+.bz-contact svg { width: 5mm; height: 5mm; flex: none; fill: none; stroke: #1A2233; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.bz-right { flex: none; width: 56mm; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+.bz-logos { display: flex; align-items: center; justify-content: center; gap: 5mm; height: 24mm; }
+.bz-logos .q { height: 21mm; width: auto; }
+.bz-logos .d { height: 18mm; width: auto; }
+.bz-qr { display: flex; gap: 4mm; }
+.bz-qr figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 1.3mm; }
+.bz-qr figcaption { font: 500 9pt/1 'Inter', 'Montserrat', sans-serif; color: #1A2233; }
+.bz-tile { width: 25mm; height: 25mm; }
+.bz-tile svg { display: block; width: 100%; height: 100%; }
+.bz-tile .qr-empty { width: 100%; height: 100%; display: grid; place-items: center; text-align: center; font: 600 5.5pt/1.3 'Inter', sans-serif; color: #8a93a3; background: #f1f3f6; }
+body.basic .fqr { display: none !important; }

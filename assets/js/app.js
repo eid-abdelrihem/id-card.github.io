@@ -49,7 +49,7 @@
 
   /* ---------------- State ---------------- */
   var KEY = 'pm-idcard-v3';
-  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · Research Collaboration with Microsoft', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
+  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', tag: 'M.Sc. AI & Data Science · IEEE-Published Researcher · 1st Place ITC-Egypt 2026 · Research Collaboration with Microsoft', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
   var state = assign({}, DEFAULTS);
   var persist = true;
 
@@ -84,7 +84,7 @@
 
   /* ---------------- Elements ---------------- */
   var el = {};
-  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'inPhoto', 'inZoom', 'nameNote',
+  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'stylePick', 'bzN1', 'bzN2', 'bzRole', 'bzDeg', 'bzEmail', 'bzPhone', 'bzqrLi', 'bzqrCv', 'inPhoto', 'inZoom', 'nameNote',
    'trackPick', 'jobChips', 'drop', 'dropThumb', 'dropTitle', 'photoTools', 'dragTip', 'photoErr',
    'btnPhotoReset', 'btnPrint', 'btnReset', 'paperFit', 'pages', 'frontCard', 'backCard',
    'fName', 'fRole', 'fTrack', 'fTrackDd', 'fTrackIco', 'fEmail', 'fProgram', 'seal', 'fNet',
@@ -248,6 +248,8 @@
     drawQR(el.qrLi, state.li, 'LinkedIn');
     drawQR(el.fqrCv, state.cv, 'CV');
     drawQR(el.fqrLi, state.li, 'LinkedIn');
+    drawQR(el.bzqrCv, state.cv, 'CV');
+    drawQR(el.bzqrLi, state.li, 'LinkedIn');
   }
 
   /* ---------------- Photo ---------------- */
@@ -527,6 +529,18 @@
     setText(el.fName, name, 'Your Full Name');
     setText(el.fRole, job, 'Job Profile');
     el.fRole.classList.toggle('caps', !!state.caps);
+    var basic = state.style !== 'classic';
+    document.body.classList.toggle('basic', basic);
+    Array.prototype.forEach.call(el.stylePick.querySelectorAll('.case-opt'), function (b) {
+      b.setAttribute('aria-checked', (b.getAttribute('data-style') === 'basic') === basic ? 'true' : 'false');
+    });
+    var parts = name ? name.split(' ') : [];
+    el.bzN1.textContent = parts.length > 1 ? parts[0] : (parts[0] || 'Your');
+    el.bzN2.textContent = parts.length > 1 ? parts.slice(1).join(' ') : (parts.length ? '' : 'Full Name');
+    el.bzRole.textContent = job || 'Job Profile';
+    el.bzDeg.textContent = 'Professional Master · ' + (t ? t.label.replace('Artificial Intelligence', 'AI') : 'Your Track');
+    el.bzEmail.textContent = email || 'name@example.com';
+    el.bzPhone.textContent = cleanMobile(state.mobile) || '+20 100 000 0000';
     var frontOnly = state.side !== 'both';
     document.body.classList.toggle('front-only', frontOnly);
     Array.prototype.forEach.call(el.sidePick.querySelectorAll('.case-opt'), function (b) {
@@ -589,6 +603,11 @@
   bindInput(el.inCv, 'cv');
   bindInput(el.inLi, 'li');
   bindInput(el.inTag, 'tag');
+  el.stylePick.addEventListener('click', function (e) {
+    var b = e.target.closest('.case-opt'); if (!b) return;
+    state.style = b.getAttribute('data-style');
+    render(); save();
+  });
   el.sidePick.addEventListener('click', function (e) {
     var b = e.target.closest('.case-opt'); if (!b) return;
     state.side = b.getAttribute('data-side');
