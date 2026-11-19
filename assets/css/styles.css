@@ -697,12 +697,12 @@ body.basic .front .foot-t.tagline .pill::before {
 body.basic .front .bz { bottom: 13mm; }
 
 /* basic design: one row of badges, text as large as fits */
-body.basic .front .foot { height: 14mm; padding: 0 4.5mm 3.4mm; }
+body.basic .front .foot { height: 14mm; padding: 0 3mm 3.4mm; }
 body.basic .front .foot-t.tagline {
-  display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 1.4mm;
-  width: 100%; max-width: 100%; overflow: hidden; line-height: 1; letter-spacing: -.005em;
+  display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 1mm;
+  width: 100%; max-width: 100%; overflow: hidden; line-height: 1; letter-spacing: -.015em;
 }
-body.basic .front .foot-t.tagline .pill { flex: none; padding: 2.1mm 2.2mm; }
-body.basic .front .foot-t.tagline .pill::before { width: 1.2mm; height: 1.2mm; margin: 0 1mm .3mm 0; }
+body.basic .front .foot-t.tagline .pill { flex: none; padding: 2.1mm 1.9mm; }
+body.basic .front .foot-t.tagline .pill::before { display: none; }
 body.basic .front .bz { bottom: 14mm; padding-top: 9mm; padding-bottom: 4mm; }
 
