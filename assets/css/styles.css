@@ -736,3 +736,6 @@ body.bzphoto .front .bz-tile { width: 24mm; height: 24mm; }
 body.bzphoto .front .bz-logos .q { height: 18.5mm; }
 body.bzphoto .front .bz-logos { top: 3.5mm; right: 5.5mm; }
 body.bzphoto .front .bz-role { font-size: 14.5pt; overflow: hidden; }
+/* photo design: name starts at the photo's left edge */
+body.bzphoto .front .bz-name { margin-left: -39mm; width: calc(100% + 39mm); }
+body.bzphoto .front .bz-ph { align-self: flex-start; margin-top: 15mm; }
