@@ -18,6 +18,12 @@
       blurb: 'Signature gold edition',
       jobs: ['AI & Data Science Engineer', 'Machine Learning Engineer', 'Data Scientist', 'AI Engineer', 'Generative AI Engineer', 'NLP Engineer', 'Computer Vision Engineer', 'Data Analyst']
     },
+    ba: {
+      label: 'Business Analytics',
+      short: 'BUSINESS ANALYTICS',
+      blurb: 'Data-driven decisions',
+      jobs: ['Business Analyst', 'Data Analyst', 'Business Intelligence Analyst', 'BI Developer', 'Analytics Engineer', 'Product Analyst']
+    },
     cyber: {
       label: 'Cyber Security',
       short: 'CYBER SECURITY',
@@ -25,7 +31,7 @@
       jobs: ['Cyber Security Analyst', 'SOC Analyst', 'Penetration Tester', 'Security Engineer', 'Incident Response Analyst', 'Cloud Security Engineer']
     }
   };
-  var ORDER = ['swd', 'ds', 'cyber'];
+  var ORDER = ['swd', 'ds', 'ba', 'cyber'];
 
   /* Cards-per-page layouts — must match the .pages[data-per] rules in styles.css. */
   var LAYOUTS = {
@@ -40,6 +46,7 @@
     ds: '<path d="M5 6.5 12 4M5 6.5 12 12M5 17.5 12 12M5 17.5 12 20M12 4l7 4M12 12l7-4M12 12l7 4M12 20l7-4" stroke-width="1.3"/>' +
         '<g fill="currentColor" stroke="none"><circle cx="5" cy="6.5" r="1.9"/><circle cx="5" cy="17.5" r="1.9"/><circle cx="12" cy="4" r="1.9"/>' +
         '<circle cx="12" cy="12" r="2.3"/><circle cx="12" cy="20" r="1.9"/><circle cx="19" cy="8" r="1.9"/><circle cx="19" cy="16" r="1.9"/></g>',
+    ba: '<path d="M4 20h16"/><rect x="5.5" y="12" width="3" height="6" rx=".6"/><rect x="10.5" y="8" width="3" height="10" rx=".6"/><rect x="15.5" y="4.5" width="3" height="13.5" rx=".6"/>',
     cyber: '<path d="M12 2.5 19.5 5.5v6c0 4.6-3.2 8.4-7.5 10-4.3-1.6-7.5-5.4-7.5-10v-6z"/>' +
            '<rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10.2 11V9.6a1.8 1.8 0 0 1 3.6 0V11"/>',
     swd: '<path d="M8 7.5 3.5 12 8 16.5M16 7.5l4.5 4.5-4.5 4.5M13.6 5.5l-3.2 13"/>' +
