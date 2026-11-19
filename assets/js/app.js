@@ -49,7 +49,7 @@
 
   /* ---------------- State ---------------- */
   var KEY = 'pm-idcard-v4';
-  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', tag: 'M.Sc. AI & Data Science · IEEE Published · 1st Place ITC-Egypt · Microsoft Collaboration', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
+  var DEFAULTS = { name: 'Eid Abd El Rahim', email: 'eid.abd.elrihem26@gmail.com', mobile: '+201207717776', track: 'ds', job: 'AI & Data Science Engineer', cv: 'https://drive.google.com/drive/folders/1rcU-okzlv9bSyZuUCf9-S-8G9ogaLg3K?usp=drive_link', li: 'https://www.linkedin.com/in/eid-mohamed-', caps: false, side: 'front', style: 'basic', uni: 'queens', tag: 'M.Sc. AI & Data Science · IEEE Published · 1st Place ITC-Egypt · Microsoft Collaboration', photo: 'assets/img/eid-photo.jpg', zoom: 1, px: 0.5, py: 0.3, per: 1 };
   var state = assign({}, DEFAULTS);
   var persist = true;
 
@@ -84,7 +84,7 @@
 
   /* ---------------- Elements ---------------- */
   var el = {};
-  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'stylePick', 'bzN1', 'bzN2', 'bzRole', 'bzDeg', 'bzEmail', 'bzPhone', 'bzqrLi', 'bzqrCv', 'bzPhImg', 'inPhoto', 'inZoom', 'nameNote',
+  ['inName', 'inEmail', 'inMobile', 'mobileNote', 'perPick', 'stageSub', 'noteFront', 'noteBack', 'fMobile', 'inJob', 'inCv', 'inLi', 'inTag', 'fFoot', 'cvNote', 'liNote', 'testCv', 'testLi', 'casePick', 'sidePick', 'fqrLi', 'fqrCv', 'stylePick', 'bzN1', 'bzN2', 'bzRole', 'bzDeg', 'bzEmail', 'bzPhone', 'bzqrLi', 'bzqrCv', 'bzPhImg', 'uniPick', 'bzUni', 'inPhoto', 'inZoom', 'nameNote',
    'trackPick', 'jobChips', 'drop', 'dropThumb', 'dropTitle', 'photoTools', 'dragTip', 'photoErr',
    'btnPhotoReset', 'btnPrint', 'btnReset', 'paperFit', 'pages', 'frontCard', 'backCard',
    'fName', 'fRole', 'fTrack', 'fTrackDd', 'fTrackIco', 'fEmail', 'fProgram', 'seal', 'fNet',
@@ -535,6 +535,18 @@
     var basic = state.style !== 'classic';
     document.body.classList.toggle('basic', basic);
     document.body.classList.toggle('bzphoto', state.style === 'photo');
+    var usm = state.uni === 'usm';
+    document.body.classList.toggle('uni-usm', usm);
+    var uniName = usm ? 'Universiti Sains Malaysia' : "Queen's University";
+    el.bzUni.textContent = uniName;
+    Array.prototype.forEach.call(document.querySelectorAll('#frontCard .uni-logo'), function (im) {
+      var src = 'assets/img/logos/' + (usm ? 'usm.png' : 'queens.png');
+      if (im.getAttribute('src') !== src) im.setAttribute('src', src);
+      im.alt = uniName;
+    });
+    Array.prototype.forEach.call(el.uniPick.querySelectorAll('.case-opt'), function (b) {
+      b.setAttribute('aria-checked', b.getAttribute('data-uni') === (usm ? 'usm' : 'queens') ? 'true' : 'false');
+    });
     if (state.photo) { if (el.bzPhImg.getAttribute('src') !== state.photo) el.bzPhImg.src = state.photo; el.bzPhImg.style.display = ''; }
     else { el.bzPhImg.removeAttribute('src'); el.bzPhImg.style.display = 'none'; }
     el.bzPhImg.style.objectPosition = Math.round((state.px == null ? .5 : state.px) * 100) + '% ' + Math.round((state.py == null ? .3 : state.py) * 100) + '%';
@@ -610,6 +622,11 @@
   bindInput(el.inCv, 'cv');
   bindInput(el.inLi, 'li');
   bindInput(el.inTag, 'tag');
+  el.uniPick.addEventListener('click', function (e) {
+    var b = e.target.closest('.case-opt'); if (!b) return;
+    state.uni = b.getAttribute('data-uni');
+    render(); save();
+  });
   el.stylePick.addEventListener('click', function (e) {
     var b = e.target.closest('.case-opt'); if (!b) return;
     state.style = b.getAttribute('data-style');

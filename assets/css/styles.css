@@ -746,3 +746,8 @@ body.bzphoto .front .bz-ph { align-self: flex-start; margin-top: 15mm; }
 body.bzphoto .front .bz-ph { height: 36mm; width: 30mm; margin-top: 13mm; }
 body.bzphoto .front .bz-name { margin-left: -36mm; width: calc(100% + 36mm); }
 body.bzphoto .front .bz-contact { margin-left: -36mm; gap: 1.6mm; }
+
+/* USM (wide logo) */
+body.uni-usm .bz-logos .q { height: auto !important; width: 38mm; }
+body.uni-usm.bzphoto .front .bz-logos .q { width: 36mm; }
+body.uni-usm .front .l-queens img { max-height: 70%; width: auto; max-width: 100%; }

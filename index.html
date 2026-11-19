@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=26">
+<link rel="stylesheet" href="assets/css/styles.css?v=27">
 </head>
 <body>
 
@@ -76,6 +76,14 @@
         <input id="inJob" type="text" placeholder="e.g. Machine Learning Engineer" maxlength="48">
         <span class="chips" id="jobChips"></span>
       </label>
+
+      <div class="field">
+        <span class="lbl">University</span>
+        <div class="case-pick" id="uniPick" role="radiogroup" aria-label="University">
+          <button type="button" role="radio" class="case-opt" data-uni="queens" aria-checked="true"><b>Q</b><small>Queen's University</small></button>
+          <button type="button" role="radio" class="case-opt" data-uni="usm" aria-checked="false"><b>USM</b><small>Universiti Sains Malaysia</small></button>
+        </div>
+      </div>
 
       <div class="field">
         <span class="lbl">Card design</span>
@@ -210,7 +218,7 @@
                   <i class="sep"></i>
                   <div class="logo l-digi"><img src="assets/img/logos/digilians.png" alt="Digilians"></div>
                   <i class="sep"></i>
-                  <div class="logo l-queens"><img src="assets/img/logos/queens.png" alt="Queen's University"></div>
+                  <div class="logo l-queens"><img class="uni-logo" src="assets/img/logos/queens.png" alt="Queen's University"></div>
                   <i class="sep"></i>
                   <div class="logo l-mcit"><img src="assets/img/logos/mcit.png" alt="Ministry of Communications and Information Technology"></div>
                 </header>
@@ -256,7 +264,7 @@
                     <h2 class="bz-name"><span class="l1" id="bzN1"></span><span class="l2" id="bzN2"></span></h2>
                     <i class="bz-line"></i>
                     <div class="bz-role" id="bzRole"></div>
-                    <div class="bz-deg"><b id="bzDeg"></b><span>Queen's University</span></div>
+                    <div class="bz-deg"><b id="bzDeg"></b><span id="bzUni">Queen's University</span></div>
                     <ul class="bz-contact">
                       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="bzEmail"></span></li>
                       <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg><span id="bzPhone"></span></li>
@@ -264,7 +272,7 @@
                   </div>
                   <div class="bz-right">
                     <div class="bz-logos">
-                      <img src="assets/img/logos/queens.png" alt="Queen's University" class="q">
+                      <img src="assets/img/logos/queens.png" alt="Queen's University" class="q uni-logo">
                       <img src="assets/img/logos/digilians.png" alt="Digilians" class="d">
                     </div>
                     <div class="bz-qr">
@@ -322,6 +330,6 @@
 </footer>
 
 <script src="assets/js/vendor/qrcode.min.js?v=1.4.4"></script>
-<script src="assets/js/app.js?v=23"></script>
+<script src="assets/js/app.js?v=24"></script>
 </body>
 </html>
