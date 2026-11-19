@@ -529,9 +529,6 @@
     el.fRole.classList.toggle('caps', !!state.caps);
     var frontOnly = state.side !== 'both';
     document.body.classList.toggle('front-only', frontOnly);
-    var nt = el.noteFront.textContent.replace(/^Page 1 of 2 · |^Front only · /, '').replace(/print (double|single)-sided/, frontOnly ? 'print single-sided' : 'print double-sided');
-    el.noteFront.textContent = (frontOnly ? 'Front only · ' : 'Page 1 of 2 · ') + nt;
-    el.stageSub.textContent = el.stageSub.textContent.replace(/print (double|single)-sided/, frontOnly ? 'print single-sided' : 'print double-sided');
     Array.prototype.forEach.call(el.sidePick.querySelectorAll('.case-opt'), function (b) {
       b.setAttribute('aria-checked', (b.getAttribute('data-side') === 'front') === frontOnly ? 'true' : 'false');
     });
@@ -549,6 +546,9 @@
     setText(el.fEmail, email, 'name@example.com');
     setText(el.fMobile, cleanMobile(state.mobile), '+20 100 000 0000');
     buildLayout();
+    var nt = el.noteFront.textContent.replace(/^Page 1 of 2 · |^Front only · /, '').replace(/print (double|single)-sided/, frontOnly ? 'print single-sided' : 'print double-sided');
+    el.noteFront.textContent = (frontOnly ? 'Front only · ' : 'Page 1 of 2 · ') + nt;
+    el.stageSub.textContent = el.stageSub.textContent.replace(/print (double|single)-sided/, frontOnly ? 'print single-sided' : 'print double-sided');
 
     if (lastTrack !== state.track) {
       lastTrack = state.track;
