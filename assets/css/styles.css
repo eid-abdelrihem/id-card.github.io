@@ -666,7 +666,11 @@ body.basic .front .foot {
   border-top: .3mm solid rgba(201, 162, 39, .45);
 }
 body.basic .front .foot::before { display: none; }
-body.basic .front .foot-t.tagline { color: #0B2A5B; font-weight: 600; }
+body.basic .front .foot-t.tagline { color: #0A2350; font-weight: 700; letter-spacing: .02em; max-width: calc(100% - 16mm); }
+body.basic .front .foot { height: 11.5mm; }
+body.basic .front .foot.has-tag .dash { width: 5mm; }
+body.basic .front .bz { bottom: 11.5mm; }
+body.basic .front .foot-t.tagline b { margin: 0 2mm; font-size: 1.15em; }
 body.basic .front .foot-t.tagline b { color: #C9A227; }
 body.basic .front .foot .dash { background: linear-gradient(90deg, transparent, rgba(201, 162, 39, .8)); }
 body.basic .front .foot .dash.r { background: linear-gradient(90deg, rgba(201, 162, 39, .8), transparent); }
