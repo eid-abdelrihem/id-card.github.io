@@ -512,6 +512,7 @@
     fitLine(el.fTrackDd, 8, 5.2);
     fitLine(el.fEmail, 8, 5.2);
     fitLine(el.fMobile, 8, 5.2);
+    if (el.bzN1.parentNode.offsetWidth) fitLine(el.bzN1.parentNode, 24, 14);
     if (state.tag.trim()) fitLine(el.fFoot, 6.4, 4.2); else el.fFoot.style.fontSize = '';
   }
 
@@ -536,7 +537,7 @@
     });
     var parts = name ? name.split(' ') : [];
     el.bzN1.textContent = parts.length > 1 ? parts[0] : (parts[0] || 'Your');
-    el.bzN2.textContent = parts.length > 1 ? parts.slice(1).join(' ') : (parts.length ? '' : 'Full Name');
+    el.bzN2.textContent = parts.length > 1 ? ' ' + parts.slice(1).join(' ') : (parts.length ? '' : ' Full Name');
     el.bzRole.textContent = job || 'Job Profile';
     el.bzDeg.textContent = 'Professional Master · ' + (t ? t.label.replace('Artificial Intelligence', 'AI') : 'Your Track');
     el.bzEmail.textContent = email || 'name@example.com';
